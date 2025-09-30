@@ -27,7 +27,6 @@
     "@pirxpilot/connect": "~4",
     "@pirxpilot/router": "~1",
     "debug": "~4",
-    "dotenv": "~16",
     "etag": "~1",
     "fresh": "~2"
   },
