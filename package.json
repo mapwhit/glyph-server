@@ -1,5 +1,5 @@
 {
-  "name": "map-glyph-server",
+  "name": "@mapwhit/glyph-server",
   "version": "1.4.0",
   "description": "Server for glyph/font files compatible with mapbox-gl-js",
   "author": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/furkot/map-glyph-server.git"
+    "url": "git+https://github.com/mapwhit/glyph-server.git"
   },
   "license": "MIT",
   "keywords": [
