@@ -1,12 +1,10 @@
-process.env.MAP_GLYPH_SERVER_FONT_PATH = __dirname + '/fixtures';
-process.env.MAP_GLYPH_SERVER_CACHE_MAX_AGE = 2592000;
+import assert from 'node:assert/strict';
+import { createServer } from 'node:http';
+import test from 'node:test';
+import { makeFetch } from 'supertest-fetch';
 
-const test = require('node:test');
-const assert = require('node:assert/strict');
-const { createServer } = require('node:http');
-
-const { makeFetch } = require('supertest-fetch');
-const app = require('..');
+import './env.js';
+import { app } from '../index.js';
 
 /*
 75651 fixtures/Metropolis Black/0-255.pbf

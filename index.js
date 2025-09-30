@@ -1,13 +1,16 @@
 #!/usr/bin/env node
 
-const process = require('node:process');
-const connect = require('@pirxpilot/connect');
-const router = require('./lib/map-glyph-server');
+import process from 'node:process';
+import connect from '@pirxpilot/connect';
+import Debug from 'debug';
+import router from './lib/map-glyph-server.js';
+
+const debug = Debug('map-glyph-server:app');
 
 try {
   process.loadEnvFile('/etc/default/map-glyph-server');
 } catch {
-  console.error('Environment file cannot be loaded.');
+  debug('Environment file cannot be loaded.');
 }
 
 const PORT = process.env.MAP_GLYPH_SERVER_PORT || 3060;
@@ -18,13 +21,11 @@ if (!FONT_PATH) {
   process.exit(1);
 }
 
-const app = connect();
+export const app = connect();
 
 app.use('/fonts', router(FONT_PATH));
 
-module.exports = app;
-
-if (!module.parent) {
+if (import.meta.main) {
   app.listen(PORT);
   console.log('Listening on port', PORT);
 }

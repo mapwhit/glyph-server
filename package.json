@@ -2,6 +2,7 @@
   "name": "@mapwhit/glyph-server",
   "version": "1.4.1",
   "description": "Server for glyph/font files compatible with mapbox-gl-js",
+  "type": "module",
   "author": {
     "name": "Damian Krzeminski",
     "email": "pirxpilot@furkot.com",
