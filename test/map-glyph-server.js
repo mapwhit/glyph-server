@@ -15,40 +15,32 @@ import { app } from '../index.js';
 
 const fetch = makeFetch(createServer(app));
 
-test('return /fonts.json', async function () {
-  const res = await fetch('/fonts.json')
-    .expect('Content-Type', /json/)
-    .expect(200);
+test('return /fonts.json', async () => {
+  const res = await fetch('/fonts.json').expect('Content-Type', /json/).expect(200);
 
   const body = await res.json();
 
-  assert.deepEqual(body, [
-    'Metropolis Black',
-    'Open Sans Bold',
-    'Open Sans Regular'
-  ]);
+  assert.deepEqual(body, ['Metropolis Black', 'Open Sans Bold', 'Open Sans Regular']);
 });
 
-test('return a specific font', function () {
-  return fetch('/fonts/Metropolis%20Black/0-255.pbf')
+test('return a specific font', () =>
+  fetch('/fonts/Metropolis%20Black/0-255.pbf')
     .expect('Content-Type', 'application/x-protobuf')
     .expect('Content-Length', '75651')
     .expect('Cache-Control', 'public, max-age=2592000')
     .expect('Etag', '"12783-O+uYHa1nljeTWqe1xiWgzTqMMDk"')
-    .expect(200);
-});
+    .expect(200));
 
-test('return a specific font again if no etag', function () {
-  return fetch('/fonts/Metropolis%20Black/0-255.pbf')
+test('return a specific font again if no etag', () =>
+  fetch('/fonts/Metropolis%20Black/0-255.pbf')
     .expect('Content-Type', 'application/x-protobuf')
     .expect('Content-Length', '75651')
     .expect('Cache-Control', 'public, max-age=2592000')
     .expect('Etag', '"12783-O+uYHa1nljeTWqe1xiWgzTqMMDk"')
-    .expect(200);
-});
+    .expect(200));
 
-test('return a specific font again if etag does not match', function () {
-  return fetch('/fonts/Metropolis%20Black/0-255.pbf', {
+test('return a specific font again if etag does not match', () =>
+  fetch('/fonts/Metropolis%20Black/0-255.pbf', {
     headers: {
       'If-None-Match': '"XXX"', // different etag
       'Cache-Control': ''
@@ -58,11 +50,10 @@ test('return a specific font again if etag does not match', function () {
     .expect('Content-Length', '75651')
     .expect('Cache-Control', 'public, max-age=2592000')
     .expect('Etag', '"12783-O+uYHa1nljeTWqe1xiWgzTqMMDk"')
-    .expect(200);
-});
+    .expect(200));
 
-test('return not modified if etag matches', function () {
-  return fetch('/fonts/Metropolis%20Black/0-255.pbf', {
+test('return not modified if etag matches', () =>
+  fetch('/fonts/Metropolis%20Black/0-255.pbf', {
     headers: {
       'If-None-Match': '"12783-O+uYHa1nljeTWqe1xiWgzTqMMDk"',
       'Cache-Control': ''
@@ -70,18 +61,15 @@ test('return not modified if etag matches', function () {
   })
     .expect('Cache-Control', 'public, max-age=2592000')
     .expect('Etag', '"12783-O+uYHa1nljeTWqe1xiWgzTqMMDk"')
-    .expect(304);
-});
+    .expect(304));
 
-test('return a fallback font for invalid name', function () {
-  return fetch('/fonts/Open%20Sans%20XXXX/256-511.pbf')
+test('return a fallback font for invalid name', () =>
+  fetch('/fonts/Open%20Sans%20XXXX/256-511.pbf')
     .expect('Content-Type', 'application/x-protobuf')
     .expect('Content-Length', '45992')
-    .expect(200);
-});
+    .expect(200));
 
-test('combines fonts if needed', function () {
-  return fetch('/fonts/Metropolis%20Black,Open%20Sans%20Bold/0-255.pbf')
+test('combines fonts if needed', () =>
+  fetch('/fonts/Metropolis%20Black,Open%20Sans%20Bold/0-255.pbf')
     .expect('Content-Type', 'application/x-protobuf')
-    .expect(200);
-});
+    .expect(200));
