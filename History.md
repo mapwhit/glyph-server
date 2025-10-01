@@ -1,4 +1,12 @@
 
+1.4.2 / 2025-09-30
+==================
+
+ * update github actions
+ * upgrade biome to 2.2.4
+ * transition to ESM format
+ * use `process.loadEnvFile` instead of `dotenv`
+
 1.4.1 / 2025-09-30
 ==================
 
