@@ -23,6 +23,6 @@ jobs:
       # Ensure npm 11.5.1 or later is installed
       - name: update npm
         run: npm install -g npm@latest
-      - run: yarn install
+      - run: npm install
       - run: make
       - run: npm publish
