@@ -71,13 +71,12 @@
     debug "~4"
     parseurl "~1"
 
-"@pirxpilot/router@~1":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@pirxpilot/router/-/router-1.1.0.tgz#81211e08ef736443552e67b83b22c93572b00c13"
-  integrity sha512-kcpxJkJVzeqDJr6oE3gwVC9qhIvAJfoaqK9QiE8WgT9GwlYhZ32d4xA6KltJgj9myqGO8PPvzKPet1OOeoecKA==
+"@pirxpilot/router@~2":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@pirxpilot/router/-/router-2.0.0.tgz#ed95ca70ed5f59a586ecddc5b42d99a7c64ad7f3"
+  integrity sha512-1lplDim8DZXj8R4zSW+3/DQ3FDbaNTa1uejS7ZL+/VEIBlsoxtdY+qQ9ch3gory6QCmVUqncEh3rh8QV59XNgQ==
   dependencies:
     parseurl "~1"
-    path-to-regexp "~8"
 
 b4a@^1.6.0:
   version "1.6.7"
@@ -129,11 +128,6 @@ parseurl@~1:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.3.tgz#9da19e7bee8d12dff0513ed5b76957793bc2e8d4"
   integrity sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==
-
-path-to-regexp@~8:
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-8.2.0.tgz#73990cc29e57a3ff2a0d914095156df5db79e8b4"
-  integrity sha512-TdrF7fW9Rphjq4RjrW0Kp2AW0Ahwu9sRGTkS6bvDi0SCwZlEZYmcfDbEsTz8RVk0EHIS/Vd1bv3JhG+1xZuAyQ==
 
 protocol-buffers-encodings@^1.1.0:
   version "1.2.0"

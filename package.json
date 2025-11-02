@@ -26,7 +26,7 @@
   "dependencies": {
     "@furkot/glyph-pbf-composite": "~1",
     "@pirxpilot/connect": "~4",
-    "@pirxpilot/router": "~1",
+    "@pirxpilot/router": "~2",
     "debug": "~4",
     "etag": "~1",
     "fresh": "~2"
