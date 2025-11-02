@@ -1,4 +1,11 @@
 
+1.4.3 / 2025-11-02
+==================
+
+ * soft dependency update
+ * use `npm` in github actions
+ * upgrade `@pirxpilot/router` to ~2
+
 1.4.2 / 2025-09-30
 ==================
 
