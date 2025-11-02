@@ -12,5 +12,5 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node }}
-      - run: yarn install
+      - run: npm install
       - run: make
