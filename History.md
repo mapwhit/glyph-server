@@ -1,4 +1,11 @@
 
+1.4.4 / 2026-01-17
+==================
+
+ * add `make deps` target
+ * upgrade '@pirxpilot/connect' to ~5
+ * replace `yarn` with `pnpm`
+
 1.4.3 / 2025-11-02
 ==================
 
